@@ -14,6 +14,7 @@ public class TestCase06 extends TestBase {
     @Test
     public void testCase06() {
         LoginPage loginPage = new LoginPage();
+        loginPage.gotoLoginTab();
         loginPage.login(Constant.validUsername,Constant.validPassword);
 
         MyTicketPage myTicketPage = new MyTicketPage();

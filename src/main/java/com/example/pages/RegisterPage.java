@@ -17,6 +17,8 @@ public class RegisterPage {
     private final By RegisterButton = By.xpath("//input[@type='submit'][@value='Register']");
     private final By ThankyouMessage = By.xpath("//h1[text()='Thank you for registering your account']");
     private final By MessageError = By.xpath("//p[@class='message error']");
+    private final By passwordInvalidError = By.xpath("//label[@for='password'][@class='validation-error']");
+    private final By pidInvalidError = By.xpath("//label[@for='pid'][@class='validation-error']");
 
     private WebElement getRegisterTab() {
         return DriverManager.getDriver().findElement(Registertab);
@@ -50,10 +52,17 @@ public class RegisterPage {
         return DriverManager.getDriver().findElement(MessageError);
     }
 
+    private WebElement getPasswordInvalidError() {
+        return DriverManager.getDriver().findElement(passwordInvalidError);
+    }
+
+    private WebElement getPidInvalidError() {
+        return DriverManager.getDriver().findElement(pidInvalidError);
+    }
+
     public void gotoRegisterTab() {
         getRegisterTab().click();
     }
-
 
     public void register(String email, String password, String cfpassword, String pid) {
         getEmailTextBox().sendKeys(email);
@@ -69,6 +78,14 @@ public class RegisterPage {
 
     public String errorMessage() {
         return getMessageError().getText();
+    }
+
+    public String passwordInvalidError(){
+        return getPasswordInvalidError().getText();
+    }
+
+    public String pidInvalidError() {
+        return getPidInvalidError().getText();
     }
 
 }

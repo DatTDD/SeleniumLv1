@@ -13,6 +13,7 @@ public class TestCase01 extends TestBase {
     @Test
     public void testCase01() {
         LoginPage loginPage = new LoginPage();
+        loginPage.gotoLoginTab();
         loginPage.login(Constant.validUsername,Constant.validPassword);
 
         HomePage homePage = new HomePage();

@@ -25,6 +25,8 @@ public class Constant {
     public static final String registerCfPassword = registerPassword;
     public static final String registerPID = "12345678";
     public static final String registerMessageError = "There're errors in the form. Please correct the errors and try again.";
+    public static final String invalidPasswordErrorMessage = "Invalid password length";
+    public static final String invalidIDErrorMessage = "Invalid ID length";
 
     //ChangePasswordPage
     public static final String changePasswordTitle = "Change password";

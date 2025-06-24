@@ -15,6 +15,7 @@ public class TestCase08 extends TestBase {
     @Test
     public void TestCase08 (){
         LoginPage loginPage = new LoginPage();
+        loginPage.gotoLoginTab();
         loginPage.login(Constant.registEremail, Constant.registerPassword);
 
         Assert.assertEquals(loginPage.loginErrorMessage(),Constant.invalidAllErrormessage, "Dang nhap that bai");
