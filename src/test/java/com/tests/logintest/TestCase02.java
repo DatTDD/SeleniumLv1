@@ -12,8 +12,15 @@ public class TestCase02 extends TestBase {
     @Test
     public void testCase02() {
         LoginPage loginPage = new LoginPage();
-        loginPage.login("",Constant.validpassword);
-        loginPage.getErrorMessage();
-        Assert.assertEquals(loginPage.getErrorMessage(), Constant.errormessage, "Đăng nhập thất bại");
+        loginPage.login("",Constant.validPassword);
+        Assert.assertEquals(loginPage.loginErrorMessage(), Constant.blankEmailOrPasswordErrorMessage, "Đăng nhập thất bại");
     }
+
+//    @Test
+//    public void testCase03() {
+//        LoginPage loginPage = new LoginPage();
+//        loginPage.login(Constant.ValidUsername, "");
+//        Assert.assertEquals(loginPage.LoginErrorMessage(), Constant.BlankEmailOrPasswordErrorMessage, "Đăng nhập thất bại");
+//    }
+
 }

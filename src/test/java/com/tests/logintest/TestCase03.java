@@ -11,8 +11,7 @@ public class TestCase03 extends TestBase {
     @Test
     public void testCase03() {
         LoginPage loginPage = new LoginPage();
-        loginPage.login(Constant.validusername, "");
-        loginPage.getErrorMessage();
-        Assert.assertEquals(loginPage.getErrorMessage(), Constant.errormessage, "Đăng nhập thất bại");
+        loginPage.login(Constant.validUsername, Constant.inValidPassword);
+        Assert.assertEquals(loginPage.loginErrorMessage(), Constant.blankEmailOrPasswordErrorMessage, "Đăng nhập thất bại");
     }
 }

@@ -11,12 +11,12 @@ public class HomePage {
 
     private final By actualWelcomeMessage = By.xpath("//strong[//*[contains(text(), 'Welcome')]]");
 
-    private WebElement getActualWelcomeMessage() {
+    private WebElement getWelcomeMessage() {
         return DriverManager.getDriver().findElement(actualWelcomeMessage);
     }
 
-//    public String getActualWelcome() {
-//        getActualWelcomeMessage().getText();
-//    }
+    public String welcomeText() {
+        return getWelcomeMessage().getText();
+    }
 
 }
