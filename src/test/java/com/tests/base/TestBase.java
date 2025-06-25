@@ -1,6 +1,6 @@
 package com.tests.base;
 
-import com.example.driver.DriverManager;
+import com.railway.driver.DriverManager;
 import org.testng.annotations.*;
 
 public class TestBase {
@@ -12,10 +12,10 @@ public class TestBase {
         DriverManager.getDriver().get("http://saferailway.somee.com");
     }
 
-    @AfterMethod
-    public void after() {
-        DriverManager.quitDriver();
-    }
+//    @AfterMethod
+//    public void after() {
+//        DriverManager.quitDriver();
+//    }
 
 
 }

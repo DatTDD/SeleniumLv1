@@ -1,8 +1,9 @@
 package com.tests.changepassword;
 
-import com.example.Constant.Constant;
-import com.example.pages.ChangePasswordPage;
-import com.example.pages.LoginPage;
+import com.railway.common.Common;
+import com.railway.constant.Constant;
+import com.railway.pages.ChangePasswordPage;
+import com.railway.pages.LoginPage;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -10,20 +11,20 @@ import org.testng.annotations.Test;
 public class TestCase09 extends TestBase {
 
     @Test
-    public void TestCase09(){
+    public void UserCanChangePassword() {
         LoginPage loginPage = new LoginPage();
         loginPage.gotoLoginTab();
-        loginPage.login(Constant.validUsername, Constant.validPassword);
+        loginPage.login(Constant.VALID_USERNAME, Constant.VALID_PASSWORD);
 
         ChangePasswordPage changePasswordPage = new ChangePasswordPage();
         changePasswordPage.gotoChangePasswordTab();
 
-        Constant constant = new Constant();
-        constant.scrollToBottom();
+        Common common = new Common();
+        common.scrollToBottom();
 
-        changePasswordPage.changePassword(Constant.validPassword,Constant.validPassword, Constant.validPassword);
+        changePasswordPage.changePassword(Constant.VALID_PASSWORD,Constant.VALID_PASSWORD, Constant.VALID_PASSWORD);
 
-        Assert.assertEquals(changePasswordPage.changePasswordMessageSuccess(),Constant.changePasswordMessageSuccess,"Doi mat khau thanh cong");
+        Assert.assertEquals(changePasswordPage.changePasswordMessageSuccess(),Constant.CHANGE_PASSWORD_MESSAGE_SUCCESS);
     }
 
 }

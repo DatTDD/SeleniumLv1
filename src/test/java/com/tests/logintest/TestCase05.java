@@ -1,21 +1,21 @@
 package com.tests.logintest;
 
-import com.example.Constant.Constant;
-import com.example.pages.LoginPage;
+import com.railway.constant.Constant;
+import com.railway.pages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TestCase05 {
 
     @Test
-    public void TestCase05() {
+    public void SystemShowsMessageWhenUserEntersWrongPasswordSeveralTimes() {
         LoginPage loginPage = new LoginPage();
         loginPage.gotoLoginTab();
 
         for (int i = 1; i < 5; i++){
-            loginPage.login(Constant.validUsername,Constant.inValidPassword);
+            loginPage.login(Constant.VALID_USERNAME,Constant.INVALID_PASSWORD);
         }
 
-        Assert.assertEquals(loginPage.loginErrorMessage(),Constant.fourTimesLoginFailMessage,"");
+        Assert.assertEquals(loginPage.loginErrorMessage(),Constant.SEVERAL_TIMES_LOGIN_FAIL_MESSAGE,"");
     }
 }

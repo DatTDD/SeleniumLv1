@@ -1,6 +1,6 @@
-package com.example.pages;
+package com.railway.pages;
 
-import com.example.driver.DriverManager;
+import com.railway.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 

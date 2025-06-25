@@ -1,9 +1,9 @@
 package com.tests.logintest;
 
-import com.example.Constant.Constant;
-import com.example.pages.ChangePasswordPage;
-import com.example.pages.LoginPage;
-import com.example.pages.MyTicketPage;
+import com.railway.constant.Constant;
+import com.railway.pages.ChangePasswordPage;
+import com.railway.pages.LoginPage;
+import com.railway.pages.MyTicketPage;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -12,19 +12,19 @@ import org.testng.annotations.Test;
 public class TestCase06 extends TestBase {
 
     @Test
-    public void testCase06() {
+    public void AdditionalPagesDisplayOnceUserLoggedIn() {
         LoginPage loginPage = new LoginPage();
         loginPage.gotoLoginTab();
-        loginPage.login(Constant.validUsername,Constant.validPassword);
+        loginPage.login(Constant.VALID_USERNAME,Constant.VALID_PASSWORD);
 
         MyTicketPage myTicketPage = new MyTicketPage();
         myTicketPage.gotoMyticketTab();
-        Assert.assertEquals(myTicketPage.myticketTitleText(),Constant.myTicketTitle,"Ban dang o trang My Ticket");
+        Assert.assertEquals(myTicketPage.myticketTitleText(),Constant.MY_TICKET_TITLE);
 
         ChangePasswordPage changePasswordPage = new ChangePasswordPage();
         changePasswordPage.gotoChangePasswordTab();
 
-        Assert.assertEquals(changePasswordPage.changePasswordTitle(),Constant.changePasswordTitle, "Ban dang o trang Change Password");
+        Assert.assertEquals(changePasswordPage.changePasswordTitle(),Constant.CHANGE_PASSWORD_TITLE);
     }
 
 }
