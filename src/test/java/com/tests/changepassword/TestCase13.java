@@ -12,7 +12,7 @@ public class TestCase13 extends TestBase {
         LoginPage loginPage = new LoginPage();
         loginPage.gotoLoginTab();
         loginPage.gotoForgotPasswordPage();
-        loginPage.emailAddressTextBox(Constant.VALID_USERNAME);
+        loginPage.emailAddressTextBox(Constant.Login.VALID_USERNAME);
         loginPage.sendInstructions();
     }
 }

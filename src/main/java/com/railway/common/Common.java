@@ -9,5 +9,4 @@ public class Common {
         js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
     }
 
-
 }

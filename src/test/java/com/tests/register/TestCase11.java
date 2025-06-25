@@ -12,9 +12,9 @@ public class TestCase11 extends TestBase {
     public void UserCannotCreateAccountWhilePasswordAndPIDFieldsAreEmpty() {
         RegisterPage registerPage = new RegisterPage();
         registerPage.gotoRegisterTab();
-        registerPage.registerAccount(Constant.REGISTER_EMAIL2, "","","");
+        registerPage.registerAccount(Constant.Register.REGISTER_EMAIL2, "","","");
 
-        Assert.assertEquals(registerPage.passwordInvalidError(),Constant.INVALID_PASSWORD_ERROR_MESSAGE);
-        Assert.assertEquals(registerPage.pidInvalidError(), Constant.invalidIDErrorMessage);
+        Assert.assertEquals(registerPage.invalidPasswordErrorMessage(),Constant.Register.INVALID_PASSWORD_ERROR_MESSAGE);
+        Assert.assertEquals(registerPage.pidInvalidErrorMessage(), Constant.Register.invalidIDErrorMessage);
     }
 }

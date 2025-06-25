@@ -1,6 +1,7 @@
 package com.tests.logintest;
 
 import com.railway.constant.Constant;
+import com.railway.pages.BasePage;
 import com.railway.pages.LoginPage;
 import com.tests.base.TestBase;
 
@@ -13,8 +14,8 @@ public class TestCase02 extends TestBase {
     public void UserCannotLoginWithBlankUsernameTextbox() {
         LoginPage loginPage = new LoginPage();
         loginPage.gotoLoginTab();
-        loginPage.login("",Constant.VALID_PASSWORD);
-        Assert.assertEquals(loginPage.loginErrorMessage(), Constant.BLANK_EMAIL_OR_PASSWORD_ERROR_MESSAGE, "Đăng nhập thất bại");
+        loginPage.login("",Constant.Login.VALID_PASSWORD);
+        Assert.assertEquals(loginPage.loginErrorMessage(), Constant.Login.BLANK_EMAIL_OR_PASSWORD_ERROR_MESSAGE, "Đăng nhập thất bại");
     }
 
 //    @Test

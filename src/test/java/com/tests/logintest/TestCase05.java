@@ -13,9 +13,9 @@ public class TestCase05 {
         loginPage.gotoLoginTab();
 
         for (int i = 1; i < 5; i++){
-            loginPage.login(Constant.VALID_USERNAME,Constant.INVALID_PASSWORD);
+            loginPage.login(Constant.Login.VALID_USERNAME,Constant.Login.INVALID_PASSWORD);
         }
 
-        Assert.assertEquals(loginPage.loginErrorMessage(),Constant.SEVERAL_TIMES_LOGIN_FAIL_MESSAGE,"");
+        Assert.assertEquals(loginPage.loginErrorMessage(),Constant.Login.SEVERAL_TIMES_LOGIN_FAIL_MESSAGE,"");
     }
 }

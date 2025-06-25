@@ -17,7 +17,7 @@ public class TestCase07 extends TestBase {
         Common common = new Common();
         common.scrollToBottom();
 
-        registerPage.registerAccount(Constant.REGISTER_EMAIL,Constant.REGISTER_PASSWORD,Constant.REGISTER_CF_PASSWORD,Constant.REGISTER_PID);
-        Assert.assertEquals(registerPage.thankyouMessage(),Constant.THANKYOU_TEXT);
+        registerPage.registerAccount(Constant.Register.REGISTER_EMAIL,Constant.Register.REGISTER_PASSWORD,Constant.Register.REGISTER_CF_PASSWORD,Constant.Register.REGISTER_PID);
+        Assert.assertEquals(registerPage.successMessage(),Constant.Register.THANKYOU_TEXT);
     }
 }

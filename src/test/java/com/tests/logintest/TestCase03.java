@@ -12,7 +12,7 @@ public class TestCase03 extends TestBase {
     public void UserCannotLogIntoRailwayWithInvalidPassword() {
         LoginPage loginPage = new LoginPage();
         loginPage.gotoLoginTab();
-        loginPage.login(Constant.VALID_USERNAME, Constant.INVALID_PASSWORD);
-        Assert.assertEquals(loginPage.loginErrorMessage(), Constant.BLANK_EMAIL_OR_PASSWORD_ERROR_MESSAGE);
+        loginPage.login(Constant.Login.VALID_USERNAME, Constant.Login.INVALID_PASSWORD);
+        Assert.assertEquals(loginPage.loginErrorMessage(), Constant.Login.BLANK_EMAIL_OR_PASSWORD_ERROR_MESSAGE);
     }
 }

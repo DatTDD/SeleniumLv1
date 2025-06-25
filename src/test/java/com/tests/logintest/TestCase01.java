@@ -14,7 +14,7 @@ public class TestCase01 extends TestBase {
     public void UserCanLogIntoRailwayWithValidUsernameAndPassword() {
         LoginPage loginPage = new LoginPage();
         loginPage.gotoLoginTab();
-        loginPage.login(Constant.VALID_USERNAME,Constant.VALID_PASSWORD);
+        loginPage.login(Constant.Login.VALID_USERNAME,Constant.Login.VALID_PASSWORD);
 
         HomePage homePage = new HomePage();
         Assert.assertEquals(homePage.welcomeText(), Constant.WELCOME_MESSAGE);

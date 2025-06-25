@@ -13,10 +13,10 @@ public class RegisterPage {
     private final By cfPasswordTextBoxBy = By.id("confirmPassword");
     private final By pidTextBoxBy = By.id("pid");
     private final By registerButtonBy = By.xpath("//input[@type='submit'][@value='Register']");
-    private final By thankyouMessageBy = By.xpath("//h1[text()='Thank you for registering your account']");
-    private final By messageErrorBy = By.xpath("//p[@class='message error']");
-    private final By passwordInvalidErrorBy = By.xpath("//label[@for='password'][@class='validation-error']");
-    private final By pidInvalidErrorBy = By.xpath("//label[@for='pid'][@class='validation-error']");
+    private final By successMessageTextBy = By.xpath("//h1[text()='Thank you for registering your account']");
+    private final By messageErrorTextBy = By.xpath("//p[@class='message error']");
+    private final By passwordInvalidErrorMessageTextBy = By.xpath("//label[@for='password'][@class='validation-error']");
+    private final By pidInvalidErrorMessageTextBy = By.xpath("//label[@for='pid'][@class='validation-error']");
 
     private WebElement registerTab() {
         return DriverManager.getDriver().findElement(registerTabBy);
@@ -42,20 +42,20 @@ public class RegisterPage {
         return DriverManager.getDriver().findElement(registerButtonBy);
     }
 
-    private WebElement thankyouMessageText() {
-        return DriverManager.getDriver().findElement(thankyouMessageBy);
+    private WebElement successMessageText() {
+        return DriverManager.getDriver().findElement(successMessageTextBy);
     }
 
     private WebElement errorMessageText() {
-        return DriverManager.getDriver().findElement(messageErrorBy);
+        return DriverManager.getDriver().findElement(messageErrorTextBy);
     }
 
-    private WebElement passwordInvalidErrorText() {
-        return DriverManager.getDriver().findElement(passwordInvalidErrorBy);
+    private WebElement passwordInvalidErrorMessageText() {
+        return DriverManager.getDriver().findElement(passwordInvalidErrorMessageTextBy);
     }
 
-    private WebElement pidInvalidErrorText() {
-        return DriverManager.getDriver().findElement(pidInvalidErrorBy);
+    private WebElement pidInvalidErrorMessgaeText() {
+        return DriverManager.getDriver().findElement(pidInvalidErrorMessageTextBy);
     }
 
     public void gotoRegisterTab() {
@@ -70,20 +70,20 @@ public class RegisterPage {
         registerButton().click();
     }
 
-    public String thankyouMessage() {
-        return thankyouMessageText().getText();
+    public String successMessage() {
+        return successMessageText().getText();
     }
 
     public String errorMessage() {
         return errorMessageText().getText();
     }
 
-    public String passwordInvalidError(){
-        return passwordInvalidErrorText().getText();
+    public String invalidPasswordErrorMessage(){
+        return passwordInvalidErrorMessageText().getText();
     }
 
-    public String pidInvalidError() {
-        return pidInvalidErrorText().getText();
+    public String pidInvalidErrorMessage() {
+        return pidInvalidErrorMessgaeText().getText();
     }
 
 }

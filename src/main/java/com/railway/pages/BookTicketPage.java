@@ -1,5 +1,6 @@
 package com.railway.pages;
 
+import com.railway.constant.Constant;
 import com.railway.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -18,6 +19,13 @@ public class BookTicketPage {
     private final By seatTypeDropdownMenuBy = By.xpath("//select[@name='SeatType']");
     private final By ticketAmountDropdownMenuBy = By.xpath("//select[@name='TicketAmount']");
     private final By bookTicketButtonBy = By.xpath("//input[@type='submit'][@value='Book ticket']");
+    private final By successfulBookingMessageBy = By.xpath("//h1[text()='Ticket booked successfully!']");
+    private By departDateInforBookedTicketdBy = By.xpath(String.format("//td[text()='%s']", Constant.BookTicket.DEPART_DATE));
+    private By departFromInforBookedTicketdBy = By.xpath(String.format("//td[text()='%s']", Constant.BookTicket.DEPART_FROM));
+    private By arriverAtInforBookedTicketdBy = By.xpath(String.format("//td[text()='%s']", Constant.BookTicket.ARRIVER_AT));
+    private By seatTypeInforBookedTicketdBy = By.xpath(String.format("//td[text()='%s']", Constant.BookTicket.SEAT_TYPE));
+    private By ticketAmountInforBookedTicketdBy = By.xpath(String.format("//td[text()='%s']", Constant.BookTicket.TICKET_AMOUNT));
+
 
     private WebElement getBookTicketTabBy() {
         return DriverManager.getDriver().findElement(bookTicketTabBy);
@@ -47,16 +55,31 @@ public class BookTicketPage {
         return DriverManager.getDriver().findElement(bookTicketButtonBy);
     }
 
-    private void waitForArriveAtUpdate() {
-        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10));
-        wait.until(driver -> {
-            Select select = new Select(arriveAtDropdownMenu());
-            String selectedOption = select.getFirstSelectedOption().getText();
-            return selectedOption.equals("Sài Gòn");
-        });
+    private WebElement successfulBookingMessageText() {
+        return DriverManager.getDriver().findElement(successfulBookingMessageBy);
     }
 
-    public void gotoBookTicketTab() {
+    private WebElement departDateInforBookedTicketText(){
+        return DriverManager.getDriver().findElement(departDateInforBookedTicketdBy);
+    }
+
+    private WebElement departFromInforBookedTicketText() {
+        return DriverManager.getDriver().findElement(departFromInforBookedTicketdBy);
+    }
+
+    private WebElement arriverAtInforBookedTicketText(){
+        return DriverManager.getDriver().findElement(arriverAtInforBookedTicketdBy);
+    }
+
+    private WebElement seatTypeInforBookedTicketText(){
+        return DriverManager.getDriver().findElement(seatTypeInforBookedTicketdBy);
+    }
+
+    private WebElement ticketAmountInforBookedTicketText(){
+        return DriverManager.getDriver().findElement(ticketAmountInforBookedTicketdBy);
+    }
+
+    public void goToBookTicketTab() {
         getBookTicketTabBy().click();
     }
 
@@ -69,13 +92,40 @@ public class BookTicketPage {
         select.selectByVisibleText(departdate);
         selectDepartFrom.selectByVisibleText(departfrom);
 
-        waitForArriveAtUpdate();
+        WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(5));
+        wait.until(driver -> true);
 
         Select selectArriveAt = new Select(arriveAtDropdownMenu());
         selectArriveAt.selectByVisibleText(arriveat);
 
         selectSeatType.selectByVisibleText(seattype);
         selectTicketAmount.selectByVisibleText(amout);
-        //bookTicketButton().click();
+        bookTicketButton().click();
     }
+
+    public String successfulBookingMessage() {
+        return successfulBookingMessageText().getText();
+    }
+
+    public String departDateInforBookedTicket() {
+        return departDateInforBookedTicketText().getText();
+    }
+
+    public String departFromInforBookedTicket() {
+        return departFromInforBookedTicketText().getText();
+    }
+
+    public String arriverAtInforBookedTicket() {
+        return arriverAtInforBookedTicketText().getText();
+    }
+
+    public String seatTypeInforBookedTicket() {
+        return seatTypeInforBookedTicketText().getText();
+    }
+
+    public String ticketAmountInforBookedTicket() {
+        return ticketAmountInforBookedTicketText().getText();
+    }
+
+
 }

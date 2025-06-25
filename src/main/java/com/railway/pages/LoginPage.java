@@ -25,7 +25,7 @@ public class LoginPage {
         return DriverManager.getDriver().findElement(usernameTextBoxBy);
     }
 
-    private WebElement passwordTextBoxBy() {
+    private WebElement passwordTextBox() {
         return DriverManager.getDriver().findElement(passwordTextBoxBy);
     }
 
@@ -33,11 +33,11 @@ public class LoginPage {
         return DriverManager.getDriver().findElement(loginbuttonBy);
     }
 
-    private WebElement loginErrorMessageBy(){
+    private WebElement loginErrorMessageText(){
         return DriverManager.getDriver().findElement(loginErrorMessageBy);
     }
 
-    private WebElement loginTitleBy() {
+    private WebElement loginTitleText() {
         return DriverManager.getDriver().findElement(loginTitleBy);
     }
 
@@ -59,16 +59,16 @@ public class LoginPage {
 
     public void login(String username, String password) {
         userNameTextBox().sendKeys(username);
-        passwordTextBoxBy().sendKeys(password);
+        passwordTextBox().sendKeys(password);
         loginButton().click();
     }
 
     public String loginErrorMessage () {
-        return loginErrorMessageBy().getText();
+        return loginErrorMessageText().getText();
     }
 
-    public String loginTitleText () {
-        return loginTitleBy().getText();
+    public String loginTitle() {
+        return loginTitleText().getText();
     }
 
     public void gotoForgotPasswordPage() {

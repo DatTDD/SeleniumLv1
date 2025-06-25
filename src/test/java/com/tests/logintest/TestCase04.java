@@ -15,8 +15,8 @@ public class TestCase04 extends TestBase {
         LoginPage loginPage = new LoginPage();
 
         BookTicketPage bookticketPage = new BookTicketPage();
-        bookticketPage.gotoBookTicketTab();
+        bookticketPage.goToBookTicketTab();
 
-        Assert.assertEquals(loginPage.loginTitleText(),Constant.LOGIN_PAGE_TITLE,"Ban dang o trang Login");
+        Assert.assertEquals(loginPage.loginTitle(),Constant.Login.LOGIN_PAGE_TITLE);
     }
 }

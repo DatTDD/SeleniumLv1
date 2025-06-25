@@ -6,23 +6,23 @@ import org.openqa.selenium.WebElement;
 
 public class MyTicketPage {
 
-    private final By myTicketTab = By.xpath("//a[span='My ticket']");
-    private final By myticketTitle = By.xpath("//h1[text()='Manage ticket']");
+    private final By myTicketTabBy = By.xpath("//a[span='My ticket']");
+    private final By myticketTitleBy = By.xpath("//h1[text()='Manage ticket']");
 
 
-    private WebElement getMyTicketTab() {
-        return DriverManager.getDriver().findElement(myTicketTab);
+    private WebElement myTicketTab() {
+        return DriverManager.getDriver().findElement(myTicketTabBy);
     }
 
-    private WebElement getMyticketTitle() {
-        return DriverManager.getDriver().findElement(myticketTitle);
+    private WebElement myTicketTitle() {
+        return DriverManager.getDriver().findElement(myticketTitleBy);
     }
 
-    public void gotoMyticketTab() {
-        getMyTicketTab().click();
+    public void goToMyTicketTab() {
+        myTicketTab().click();
     }
 
-    public String myticketTitleText() {
-        return getMyticketTitle().getText();
+    public String myTicketTitleText() {
+        return myTicketTitle().getText();
     }
 }

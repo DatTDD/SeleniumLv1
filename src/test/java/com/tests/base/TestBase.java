@@ -12,10 +12,10 @@ public class TestBase {
         DriverManager.getDriver().get("http://saferailway.somee.com");
     }
 
-//    @AfterMethod
-//    public void after() {
-//        DriverManager.quitDriver();
-//    }
+    @AfterMethod
+    public void after() {
+        DriverManager.quitDriver();
+    }
 
 
 }

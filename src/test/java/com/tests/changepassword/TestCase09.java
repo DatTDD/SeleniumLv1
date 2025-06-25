@@ -14,7 +14,7 @@ public class TestCase09 extends TestBase {
     public void UserCanChangePassword() {
         LoginPage loginPage = new LoginPage();
         loginPage.gotoLoginTab();
-        loginPage.login(Constant.VALID_USERNAME, Constant.VALID_PASSWORD);
+        loginPage.login(Constant.Login.VALID_USERNAME, Constant.Login.VALID_PASSWORD);
 
         ChangePasswordPage changePasswordPage = new ChangePasswordPage();
         changePasswordPage.gotoChangePasswordTab();
@@ -22,9 +22,9 @@ public class TestCase09 extends TestBase {
         Common common = new Common();
         common.scrollToBottom();
 
-        changePasswordPage.changePassword(Constant.VALID_PASSWORD,Constant.VALID_PASSWORD, Constant.VALID_PASSWORD);
+        changePasswordPage.changePassword(Constant.Login.VALID_PASSWORD,Constant.Login.VALID_PASSWORD, Constant.Login.VALID_PASSWORD);
 
-        Assert.assertEquals(changePasswordPage.changePasswordMessageSuccess(),Constant.CHANGE_PASSWORD_MESSAGE_SUCCESS);
+        Assert.assertEquals(changePasswordPage.changePasswordMessageSuccess(),Constant.ChangePassword.CHANGE_PASSWORD_MESSAGE_SUCCESS);
     }
 
 }
