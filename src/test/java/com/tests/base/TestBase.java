@@ -5,7 +5,6 @@ import org.testng.annotations.*;
 
 public class TestBase {
 
-
     @BeforeMethod
     public void beforeTest() {
         DriverManager.createDriver();
@@ -16,6 +15,5 @@ public class TestBase {
     public void after() {
         DriverManager.quitDriver();
     }
-
 
 }

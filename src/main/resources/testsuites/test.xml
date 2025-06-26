@@ -1,17 +1,24 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="SampleTestSuite">
-    <test name="SampleTest1">
-        <classes>
-            <class name="com.tests.logintest.TestCase01"/>
-            <class name="com.tests.logintest.TestCase02"/>
-            <class name="com.tests.logintest.TestCase03"/>
-            <class name="com.tests.logintest.TestCase04"/>
-            <class name="com.tests.logintest.TestCase05"/>
-            <class name="com.tests.logintest.TestCase06"/>
-            <class name="com.tests.register.TestCase07"/>
-            <class name="com.tests.logintest.TestCase08"/>
-            <class name="com.tests.changepassword.TestCase09"/>
-            <class name="com.tests.register.TestCase10"/>
-        </classes>
+<suite name="Railway Test Suite" parallel="methods" verbose="5" thread-count="4">
+    <listeners>
+        <listener class-name="com.railway.listeners.TestListener" />
+    </listeners>
+
+    <test name="Railway Test">
+<!--        <classes>-->
+<!--            <class name="com.tests.logintest.TestCase01"/>-->
+<!--            <class name="com.tests.logintest.TestCase02"/>-->
+<!--            <class name="com.tests.logintest.TestCase03"/>-->
+<!--            <class name="com.tests.logintest.TestCase04"/>-->
+<!--            <class name="com.tests.logintest.TestCase05"/>-->
+<!--            <class name="com.tests.logintest.TestCase06"/>-->
+<!--            <class name="com.tests.logintest.TestCase08"/>-->
+<!--        </classes>-->
+        <packages>
+            <package name="com.tests.changepassword"/>
+            <package name="com.tests.bookticket"/>
+            <package name="com.tests.register"/>
+            <package name="com.tests.logintest"/>
+        </packages>
     </test>
 </suite>

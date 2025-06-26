@@ -10,9 +10,10 @@ public class TestCase13 extends TestBase {
     @Test
     public void ErrorMessagesDisplayIfPasswordAndConfirmPasswordDoNotMatchWhenResettingPassword() {
         LoginPage loginPage = new LoginPage();
-        loginPage.gotoLoginTab();
+        loginPage.clickOnTab(Constant.PageTitle.LOGIN_PAGE_TITLE);
         loginPage.gotoForgotPasswordPage();
         loginPage.emailAddressTextBox(Constant.Login.VALID_USERNAME);
         loginPage.sendInstructions();
+
     }
 }

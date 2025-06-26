@@ -13,7 +13,7 @@ public class TestCase02 extends TestBase {
     @Test
     public void UserCannotLoginWithBlankUsernameTextbox() {
         LoginPage loginPage = new LoginPage();
-        loginPage.gotoLoginTab();
+        loginPage.clickOnTab(Constant.PageTitle.LOGIN_PAGE_TITLE);
         loginPage.login("",Constant.Login.VALID_PASSWORD);
         Assert.assertEquals(loginPage.loginErrorMessage(), Constant.Login.BLANK_EMAIL_OR_PASSWORD_ERROR_MESSAGE, "Đăng nhập thất bại");
     }

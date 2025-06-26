@@ -25,6 +25,7 @@
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
+
         </repository>
     </repositories>
 
@@ -55,6 +56,13 @@
             <artifactId>selenium-logger</artifactId>
             <version>2.4.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.15.1</version>
+        </dependency>
+
     </dependencies>
 
     <build>

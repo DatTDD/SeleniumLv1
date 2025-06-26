@@ -4,7 +4,7 @@ import com.railway.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class HomePage {
+public class HomePage extends BasePage {
 
     private final By welcomeMessageBy = By.xpath("//strong[//*[contains(text(), 'Welcome')]]");
 

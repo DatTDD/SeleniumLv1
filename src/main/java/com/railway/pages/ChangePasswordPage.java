@@ -4,7 +4,7 @@ import com.railway.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class ChangePasswordPage {
+public class ChangePasswordPage extends BasePage {
     private final By changePasswordTabBy = By.xpath("//a[span='Change password']");
     private final By changePasswordTitleBy = By.xpath("//h1[text()='Change password']");
     private final By currentPasswordTextBoxBy = By.id("currentPassword");

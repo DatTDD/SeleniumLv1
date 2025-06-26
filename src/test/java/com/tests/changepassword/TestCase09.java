@@ -13,7 +13,7 @@ public class TestCase09 extends TestBase {
     @Test
     public void UserCanChangePassword() {
         LoginPage loginPage = new LoginPage();
-        loginPage.gotoLoginTab();
+        loginPage.clickOnTab(Constant.PageTitle.LOGIN_PAGE_TITLE);
         loginPage.login(Constant.Login.VALID_USERNAME, Constant.Login.VALID_PASSWORD);
 
         ChangePasswordPage changePasswordPage = new ChangePasswordPage();

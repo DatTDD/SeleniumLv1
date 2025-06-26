@@ -1,5 +1,7 @@
 package com.railway.constant;
 
+import com.railway.common.Common;
+
 public class Constant {
 
     //LoginPage
@@ -18,8 +20,7 @@ public class Constant {
 
     public static class Register {
         public static final String THANKYOU_TEXT = "Thank you for registering your account";
-        public static final String REGISTER_EMAIL = "113@gmail.com";
-        public static final String REGISTER_EMAIL2 = "02091945@gmail.com";
+        public static final String REGISTER_EMAIL =  "selenium12345@gmail.com";
         public static final String REGISTER_PASSWORD = "12345678";
         public static final String REGISTER_CF_PASSWORD = REGISTER_PASSWORD;
         public static final String REGISTER_PID = "12345678";
@@ -49,10 +50,11 @@ public class Constant {
     }
 
     public static class PageTitle {
-        public static final String LOGIN_PAGE_TITLE = "Login page";
+        public static final String LOGIN_PAGE_TITLE = "Login";
         public static final String MY_TICKET_TITLE = "Manage ticket";
         public static final String CHANGE_PASSWORD_TITLE = "Change password";
         public static final String REGISTER_PAGE_TITLE = "Create accounte";
         public static final String BOOK_TICKET_PAGE_TITLE = "Book ticket";
+        public static final String LOG_OUT = "Log out";
     }
 }

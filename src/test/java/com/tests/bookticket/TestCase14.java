@@ -14,7 +14,7 @@ public class TestCase14 extends TestBase {
     public void UserCanBook1TicketAtATime() {
         LoginPage loginPage = new LoginPage();
 
-        loginPage.gotoLoginTab();
+        loginPage.clickOnTab(Constant.PageTitle.LOGIN_PAGE_TITLE);
         loginPage.login(Constant.Login.VALID_USERNAME, Constant.Login.VALID_PASSWORD);
 
         BookTicketPage bookTicketPage = new BookTicketPage();

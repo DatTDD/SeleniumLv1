@@ -15,7 +15,7 @@ public class TestCase08 extends TestBase {
     @Test
     public void UserCannotLoginWithAnAccountHasNotBeenActivated() {
         LoginPage loginPage = new LoginPage();
-        loginPage.gotoLoginTab();
+        loginPage.clickOnTab(Constant.PageTitle.LOGIN_PAGE_TITLE);
         loginPage.login(Constant.Register.REGISTER_EMAIL, Constant.Register.REGISTER_PASSWORD);
 
         Assert.assertEquals(loginPage.loginErrorMessage(),Constant.Login.INVALID_ALL_ERROR_MESSAGE, "Dang nhap that bai");

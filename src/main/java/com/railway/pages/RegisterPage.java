@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 
 
 
-public class RegisterPage {
+public class RegisterPage extends BasePage {
     private final By registerTabBy = By.xpath("//a[span='Register']");
     private final By emailTextBoxBy = By.id("email");
     private final By passwordTextBoxBy = By.id("password");

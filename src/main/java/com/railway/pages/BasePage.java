@@ -3,18 +3,40 @@ package com.railway.pages;
 import com.railway.constant.Constant;
 import com.railway.driver.DriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class BasePage {
-//    private By basexpath = By.xpath("//a//span[text()='%s']");
-//
-//    private WebElement goToLoginTabText() {
-//        return DriverManager.getDriver().findElement(By.xpath(String.format("//a//span[text()='%s']", Constant.PageTitle.LOGIN_PAGE_TITLE)));
-//    }
-//
-//    public void goToLoginTab() {
-//        goToLoginTabText().click();
-//    }
+    private final String tabXpath = "//a//span[text()='%s']";
 
+    private WebElement getTab(String tab) {
+        return DriverManager.getDriver().findElement(By.xpath(String.format(tabXpath, tab)));
+    }
+
+    protected static WebElement webElement(By element) {
+        return DriverManager.getDriver().findElement(element);
+    }
+
+    public boolean isMyTicketTabDisplayed() {
+        return getTab(Constant.PageTitle.MY_TICKET_TITLE).isDisplayed();
+    }
+
+    public boolean isChangePasswordTabDisplayed() {
+        return getTab(Constant.PageTitle.CHANGE_PASSWORD_TITLE).isDisplayed();
+    }
+
+    public boolean isLogOutTabDisplayed() {
+        return getTab(Constant.PageTitle.LOG_OUT).isDisplayed();
+    }
+
+    public void clickOnTab(String tab) {
+        getTab(tab).click();
+    }
+
+    public String getPageTitle() {
+        return DriverManager.getDriver().getTitle();
+    }
+
+    public static String getElementText(WebElement element) {
+        return element.getText().trim();
+    }
 }

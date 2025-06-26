@@ -3,19 +3,18 @@ package com.railway.pages;
 import com.railway.constant.Constant;
 import com.railway.driver.DriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import java.time.Duration;
 
-public class BookTicketPage {
+public class BookTicketPage extends BasePage {
 
     private final By bookTicketTabBy = By.xpath("//a[span='Book ticket']");
     private final By departDateDropdownMenuBy = By.xpath("//select[@name='Date']");
     private final By departFromDropdownMenuBy = By.xpath("//select[@name='DepartStation']");
-    private final By arriveAtDropdownMenuBy = By.xpath("//select[@name='ArriveStation']");
+    private final By arriverAtDropdownMenuBy = By.xpath("//select[@name='ArriveStation']");
     private final By seatTypeDropdownMenuBy = By.xpath("//select[@name='SeatType']");
     private final By ticketAmountDropdownMenuBy = By.xpath("//select[@name='TicketAmount']");
     private final By bookTicketButtonBy = By.xpath("//input[@type='submit'][@value='Book ticket']");
@@ -40,7 +39,7 @@ public class BookTicketPage {
     }
 
     private WebElement arriveAtDropdownMenu() {
-        return DriverManager.getDriver().findElement(arriveAtDropdownMenuBy);
+        return DriverManager.getDriver().findElement(arriverAtDropdownMenuBy);
     }
 
     private WebElement seatTypeDropdownMenu() {
@@ -101,6 +100,16 @@ public class BookTicketPage {
         selectSeatType.selectByVisibleText(seattype);
         selectTicketAmount.selectByVisibleText(amout);
         bookTicketButton().click();
+    }
+
+    public String selectedDepartFromValue() {
+        WebElement dropdown = DriverManager.getDriver().findElement(departFromDropdownMenuBy);
+        return new Select(dropdown).getFirstSelectedOption().getText();
+    }
+
+    public String selectedArriveAtValue() {
+        WebElement dropdown = DriverManager.getDriver().findElement(arriverAtDropdownMenuBy);
+        return new Select(dropdown).getFirstSelectedOption().getText();
     }
 
     public String successfulBookingMessage() {

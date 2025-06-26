@@ -4,7 +4,7 @@ import com.railway.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
 
     private final By loginTabBy = By.xpath("//a[span='Login']");
     private final By usernameTextBoxBy = By.id("username");
@@ -53,11 +53,10 @@ public class LoginPage {
         return DriverManager.getDriver().findElement(sendInstructionsButtonBy);
     }
 
-    public void gotoLoginTab() {
-        loginTab().click();
-    }
-
     public void login(String username, String password) {
+        if (!userNameTextBox().getAttribute("value").isEmpty()) {
+            userNameTextBox().clear();
+        }
         userNameTextBox().sendKeys(username);
         passwordTextBox().sendKeys(password);
         loginButton().click();

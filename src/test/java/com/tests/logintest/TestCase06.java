@@ -14,7 +14,7 @@ public class TestCase06 extends TestBase {
     @Test
     public void AdditionalPagesDisplayOnceUserLoggedIn() {
         LoginPage loginPage = new LoginPage();
-        loginPage.gotoLoginTab();
+        loginPage.clickOnTab(Constant.PageTitle.LOGIN_PAGE_TITLE);
         loginPage.login(Constant.Login.VALID_USERNAME,Constant.Login.VALID_PASSWORD);
 
         MyTicketPage myTicketPage = new MyTicketPage();
