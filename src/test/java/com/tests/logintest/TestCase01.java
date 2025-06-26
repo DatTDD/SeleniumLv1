@@ -1,8 +1,8 @@
 package com.tests.logintest;
 
-import com.example.Constant.Constant;
-import com.example.pages.HomePage;
-import com.example.pages.LoginPage;
+import com.railway.constant.Constant;
+import com.railway.pages.HomePage;
+import com.railway.pages.LoginPage;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -11,12 +11,13 @@ import org.testng.annotations.Test;
 public class TestCase01 extends TestBase {
 
     @Test
-    public void testCase01() {
+    public void UserCanLogIntoRailwayWithValidUsernameAndPassword() {
         LoginPage loginPage = new LoginPage();
-        loginPage.login(Constant.validUsername,Constant.validPassword);
+        loginPage.gotoLoginTab();
+        loginPage.login(Constant.Login.VALID_USERNAME,Constant.Login.VALID_PASSWORD);
 
         HomePage homePage = new HomePage();
-        Assert.assertEquals(homePage.welcomeText(), Constant.welcomeMessage, "");
+        Assert.assertEquals(homePage.welcomeText(), Constant.WELCOME_MESSAGE);
     }
 
 }

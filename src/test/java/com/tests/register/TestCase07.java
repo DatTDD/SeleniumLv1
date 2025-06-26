@@ -1,7 +1,8 @@
 package com.tests.register;
 
-import com.example.Constant.Constant;
-import com.example.pages.RegisterPage;
+import com.railway.common.Common;
+import com.railway.constant.Constant;
+import com.railway.pages.RegisterPage;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -9,14 +10,14 @@ import org.testng.annotations.Test;
 public class TestCase07 extends TestBase {
 
     @Test
-    public void TestCase07 (){
+    public void User_can_create_new_account() {
         RegisterPage registerPage = new RegisterPage();
         registerPage.gotoRegisterTab();
 
-        Constant constant = new Constant();
-        constant.scrollToBottom();
+        Common common = new Common();
+        common.scrollToBottom();
 
-        registerPage.register(Constant.registEremail,Constant.registerPassword,Constant.registerCfPassword,Constant.registerPID);
-        Assert.assertEquals(registerPage.thankyouMessage(),Constant.thankyouText,"Dang ky thanh cong");
+        registerPage.registerAccount(Constant.Register.REGISTER_EMAIL,Constant.Register.REGISTER_PASSWORD,Constant.Register.REGISTER_CF_PASSWORD,Constant.Register.REGISTER_PID);
+        Assert.assertEquals(registerPage.successMessage(),Constant.Register.THANKYOU_TEXT);
     }
 }
