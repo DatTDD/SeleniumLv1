@@ -1,12 +1,11 @@
 package com.tests.logintest;
 
-import com.railway.constant.Constant;
+import com.railway.constant.Constants;
 import com.railway.pages.BookTicketPage;
 import com.railway.pages.LoginPage;
 import com.tests.base.TestBase;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 
 public class TestCase04 extends TestBase {
 
@@ -15,8 +14,8 @@ public class TestCase04 extends TestBase {
         LoginPage loginPage = new LoginPage();
 
         BookTicketPage bookticketPage = new BookTicketPage();
-        bookticketPage.goToBookTicketTab();
+        bookticketPage.clickOnTab(Constants.MenuBar.BOOK_TICKET);
 
-        Assert.assertEquals(loginPage.loginTitle(),Constant.Login.LOGIN_PAGE_TITLE);
+        Assert.assertEquals(loginPage.loginTitle(), Constants.PageTitle.LOGIN_PAGE_TITLE);
     }
 }

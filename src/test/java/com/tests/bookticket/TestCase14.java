@@ -1,7 +1,7 @@
 package com.tests.bookticket;
 
 import com.railway.common.Common;
-import com.railway.constant.Constant;
+import com.railway.constant.Constants;
 import com.railway.pages.BookTicketPage;
 import com.railway.pages.LoginPage;
 import com.tests.base.TestBase;
@@ -14,21 +14,21 @@ public class TestCase14 extends TestBase {
     public void UserCanBook1TicketAtATime() {
         LoginPage loginPage = new LoginPage();
 
-        loginPage.gotoLoginTab();
-        loginPage.login(Constant.Login.VALID_USERNAME, Constant.Login.VALID_PASSWORD);
+//        loginPage.clickOnTab(Constants.MenuBar.LOGIN);
+        loginPage.login(Constants.Account.VALID_USERNAME, Constants.Account.VALID_PASSWORD);
 
         BookTicketPage bookTicketPage = new BookTicketPage();
-        bookTicketPage.goToBookTicketTab();
+        bookTicketPage.clickOnTab(Constants.MenuBar.BOOK_TICKET);
 
         Common common = new Common();
         common.scrollToBottom();
-        bookTicketPage.bookTicket(Constant.BookTicket.DEPART_DATE, Constant.BookTicket.DEPART_FROM, Constant.BookTicket.ARRIVER_AT, Constant.BookTicket.SEAT_TYPE, Constant.BookTicket.TICKET_AMOUNT);
+        bookTicketPage.bookTicket(Constants.BookTicket.DEPART_DATE, Constants.BookTicket.DEPART_FROM, Constants.BookTicket.ARRIVER_AT, Constants.BookTicket.SEAT_TYPE, Constants.BookTicket.TICKET_AMOUNT);
 
-        Assert.assertEquals(bookTicketPage.successfulBookingMessage(), Constant.BookTicket.SUCCESSFUL_BOOKING_MESSAGE);
-        Assert.assertEquals(bookTicketPage.departDateInforBookedTicket(),Constant.BookTicket.DEPART_DATE);
-        Assert.assertEquals(bookTicketPage.departFromInforBookedTicket(),Constant.BookTicket.DEPART_FROM);
-        Assert.assertEquals(bookTicketPage.arriverAtInforBookedTicket(),Constant.BookTicket.ARRIVER_AT);
-        Assert.assertEquals(bookTicketPage.seatTypeInforBookedTicket(),Constant.BookTicket.SEAT_TYPE);
-        Assert.assertEquals(bookTicketPage.ticketAmountInforBookedTicket(),Constant.BookTicket.TICKET_AMOUNT);
+        Assert.assertEquals(bookTicketPage.getSuccessfulBookingMessage(), Constants.BookTicket.SUCCESSFUL_BOOKING_MESSAGE);
+        Assert.assertEquals(bookTicketPage.getDepartDateInforBookedTicket(), Constants.BookTicket.DEPART_DATE);
+        Assert.assertEquals(bookTicketPage.getDepartFromInforBookedTicket(), Constants.BookTicket.DEPART_FROM);
+        Assert.assertEquals(bookTicketPage.getArriverAtInforBookedTicket(), Constants.BookTicket.ARRIVER_AT);
+        Assert.assertEquals(bookTicketPage.getSeatTypeInforBookedTicket(), Constants.BookTicket.SEAT_TYPE);
+        Assert.assertEquals(bookTicketPage.ticketAmountInforBookedTicket(), Constants.BookTicket.TICKET_AMOUNT);
     }
 }

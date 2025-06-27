@@ -1,6 +1,6 @@
 package com.tests.logintest;
 
-import com.railway.constant.Constant;
+import com.railway.constant.Constants;
 import com.railway.pages.LoginPage;
 import com.tests.base.TestBase;
 import org.slf4j.Logger;
@@ -15,9 +15,9 @@ public class TestCase08 extends TestBase {
     @Test
     public void UserCannotLoginWithAnAccountHasNotBeenActivated() {
         LoginPage loginPage = new LoginPage();
-        loginPage.gotoLoginTab();
-        loginPage.login(Constant.Register.REGISTER_EMAIL, Constant.Register.REGISTER_PASSWORD);
+        loginPage.clickOnTab(Constants.MenuBar.LOGIN);
+        loginPage.login(Constants.Account.REGISTER_EMAIL, Constants.Account.REGISTER_PASSWORD);
 
-        Assert.assertEquals(loginPage.loginErrorMessage(),Constant.Login.INVALID_ALL_ERROR_MESSAGE, "Dang nhap that bai");
+        Assert.assertEquals(loginPage.loginErrorMessage(), Constants.Login.INVALID_ALL_ERROR_MESSAGE, "Dang nhap that bai");
     }
 }
