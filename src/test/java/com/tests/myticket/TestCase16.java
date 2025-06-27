@@ -1,6 +1,6 @@
 package com.tests.myticket;
 
-import com.railway.constant.Constant;
+import com.railway.constant.Constants;
 import com.railway.pages.LoginPage;
 import com.railway.pages.MyTicketPage;
 import com.tests.base.TestBase;
@@ -12,14 +12,14 @@ public class TestCase16 extends TestBase {
     @Test
     public void UserCanCancelATicket() {
         LoginPage loginPage = new LoginPage();
-        loginPage.clickOnTab(Constant.PageTitle.LOGIN_PAGE_TITLE);
-        loginPage.login(Constant.Login.VALID_USERNAME, Constant.Login.VALID_PASSWORD);
+        loginPage.clickOnTab(Constants.MenuBar.LOGIN);
+        loginPage.login(Constants.Account.VALID_USERNAME, Constants.Account.VALID_PASSWORD);
 
         MyTicketPage myTicketPage = new MyTicketPage();
-        myTicketPage.goToMyTicketTab();
-        myTicketPage.useFilterToSearchTicket(Constant.BookTicket.DEPART_FROM, Constant.BookTicket.ARRIVER_AT, Constant.BookTicket.DEPART_DATE, "New");
+        myTicketPage.clickOnTab(Constants.MenuBar.MY_TICKET);
+        myTicketPage.useFilterToSearchTicket(Constants.BookTicket.DEPART_FROM, Constants.BookTicket.ARRIVER_AT, Constants.BookTicket.DEPART_DATE, "New");
         int numberOfTicketRowsBeforeDelete = myTicketPage.getNumberOfTicketRows();
-        myTicketPage.cancelTicket(Constant.BookTicket.DEPART_FROM, Constant.BookTicket.ARRIVER_AT, Constant.BookTicket.SEAT_TYPE, Constant.BookTicket.DEPART_DATE, Constant.BookTicket.TICKET_AMOUNT);
+        myTicketPage.cancelTicket(Constants.BookTicket.DEPART_FROM, Constants.BookTicket.ARRIVER_AT, Constants.BookTicket.SEAT_TYPE, Constants.BookTicket.DEPART_DATE, Constants.BookTicket.TICKET_AMOUNT);
         myTicketPage.acceptCancelAlert();
         int numberOfTicketRowsAfterDelete = myTicketPage.getNumberOfTicketRows();
 

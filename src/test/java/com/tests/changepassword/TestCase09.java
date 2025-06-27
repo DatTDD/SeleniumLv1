@@ -1,7 +1,7 @@
 package com.tests.changepassword;
 
 import com.railway.common.Common;
-import com.railway.constant.Constant;
+import com.railway.constant.Constants;
 import com.railway.pages.ChangePasswordPage;
 import com.railway.pages.LoginPage;
 import com.tests.base.TestBase;
@@ -13,18 +13,18 @@ public class TestCase09 extends TestBase {
     @Test
     public void UserCanChangePassword() {
         LoginPage loginPage = new LoginPage();
-        loginPage.clickOnTab(Constant.PageTitle.LOGIN_PAGE_TITLE);
-        loginPage.login(Constant.Login.VALID_USERNAME, Constant.Login.VALID_PASSWORD);
+        loginPage.clickOnTab(Constants.MenuBar.LOGIN);
+        loginPage.login(Constants.Account.VALID_USERNAME, Constants.Account.VALID_PASSWORD);
 
         ChangePasswordPage changePasswordPage = new ChangePasswordPage();
-        changePasswordPage.gotoChangePasswordTab();
+        changePasswordPage.clickOnTab(Constants.MenuBar.CHANGE_PASSWORD);
 
         Common common = new Common();
         common.scrollToBottom();
 
-        changePasswordPage.changePassword(Constant.Login.VALID_PASSWORD,Constant.Login.VALID_PASSWORD, Constant.Login.VALID_PASSWORD);
+        changePasswordPage.changePassword(Constants.Account.VALID_PASSWORD, Constants.Account.VALID_PASSWORD, Constants.Account.VALID_PASSWORD);
 
-        Assert.assertEquals(changePasswordPage.changePasswordMessageSuccess(),Constant.ChangePassword.CHANGE_PASSWORD_MESSAGE_SUCCESS);
+        Assert.assertEquals(changePasswordPage.getChangePasswordMessageSuccess(), Constants.ChangePassword.CHANGE_PASSWORD_MESSAGE_SUCCESS);
     }
 
 }

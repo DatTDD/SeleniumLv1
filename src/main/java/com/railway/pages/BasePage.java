@@ -1,6 +1,6 @@
 package com.railway.pages;
 
-import com.railway.constant.Constant;
+import com.railway.constant.Constants;
 import com.railway.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -12,31 +12,24 @@ public class BasePage {
         return DriverManager.getDriver().findElement(By.xpath(String.format(tabXpath, tab)));
     }
 
-    protected static WebElement webElement(By element) {
+    protected static WebElement getWebElement(By element) {
         return DriverManager.getDriver().findElement(element);
     }
 
     public boolean isMyTicketTabDisplayed() {
-        return getTab(Constant.PageTitle.MY_TICKET_TITLE).isDisplayed();
+        return getTab(Constants.MenuBar.MY_TICKET).isDisplayed();
     }
 
     public boolean isChangePasswordTabDisplayed() {
-        return getTab(Constant.PageTitle.CHANGE_PASSWORD_TITLE).isDisplayed();
+        return getTab(Constants.MenuBar.CHANGE_PASSWORD).isDisplayed();
     }
 
     public boolean isLogOutTabDisplayed() {
-        return getTab(Constant.PageTitle.LOG_OUT).isDisplayed();
+        return getTab(Constants.MenuBar.LOGOUT).isDisplayed();
     }
 
-    public void clickOnTab(String tab) {
-        getTab(tab).click();
+    public void clickOnTab(String tabName) {
+        getTab(tabName).click();
     }
 
-    public String getPageTitle() {
-        return DriverManager.getDriver().getTitle();
-    }
-
-    public static String getElementText(WebElement element) {
-        return element.getText().trim();
-    }
 }
