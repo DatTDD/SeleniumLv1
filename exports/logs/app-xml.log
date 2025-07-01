@@ -1,0 +1,103 @@
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [TestRunner] Running the tests in 'Railway Test' with parallel mode:methods
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [RunInfo] Adding method selector: org.testng.internal.XmlMethodSelector@2807bdeb priority: 10
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [TestClass] Creating TestClass for [ClassImpl class=com.tests.logintest.TestCase01]
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [TestClass] Adding method TestCase01.UserCanLogIntoRailwayWithValidUsernameAndPassword()[pri:0, instance:null] on TestClass class com.tests.logintest.TestCase01
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 3 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [XmlMethodSelector] Including method com.tests.base.beforeTest()
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 8 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 15 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [XmlMethodSelector] Including method com.tests.base.after()
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [TestClass] Creating TestClass for [ClassImpl class=com.tests.logintest.TestCase02]
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [TestClass] Adding method TestCase02.UserCannotLoginWithBlankUsernameTextbox()[pri:1, instance:null] on TestClass class com.tests.logintest.TestCase02
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [XmlMethodSelector] Including method com.tests.logintest.UserCanLogIntoRailwayWithValidUsernameAndPassword()
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [XmlMethodSelector] Including method com.tests.logintest.UserCannotLoginWithBlankUsernameTextbox()
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 1 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 4 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.collectMethodsByGroup() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] MethodGroupsHelper.sortMethods() took 0 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [TestNG] Running:
+  C:\Users\trand\IdeaProjects\selenium-test\src\main\resources\testsuites\test.xml
+
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [SuiteRunner] Created 1 TestRunners
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [TestRunner] Running test Railway Test on 2  classes,  included groups:[] excluded groups:[]
+[INFO ] 27-06-2025 17:38:49 [main] TestClass - ===== Test class
+com.tests.logintest.TestCase01
+[INFO ] 27-06-2025 17:38:49 [main] TestClass -   @BeforeMethod TestBase.beforeTest()[pri:0, instance:com.tests.logintest.TestCase01@3c989952]
+[INFO ] 27-06-2025 17:38:49 [main] TestClass -     @Test TestCase01.UserCanLogIntoRailwayWithValidUsernameAndPassword()[pri:0, instance:com.tests.logintest.TestCase01@3c989952]
+[INFO ] 27-06-2025 17:38:49 [main] TestClass -   @AfterMethod TestBase.after()[pri:0, instance:com.tests.logintest.TestCase01@3c989952]
+[INFO ] 27-06-2025 17:38:49 [main] TestClass - ======
+[INFO ] 27-06-2025 17:38:49 [main] TestClass - ===== Test class
+com.tests.logintest.TestCase02
+[INFO ] 27-06-2025 17:38:49 [main] TestClass -   @BeforeMethod TestBase.beforeTest()[pri:0, instance:com.tests.logintest.TestCase02@6035b93b]
+[INFO ] 27-06-2025 17:38:49 [main] TestClass -     @Test TestCase02.UserCannotLoginWithBlankUsernameTextbox()[pri:1, instance:com.tests.logintest.TestCase02@6035b93b]
+[INFO ] 27-06-2025 17:38:49 [main] TestClass -   @AfterMethod TestBase.after()[pri:0, instance:com.tests.logintest.TestCase02@6035b93b]
+[INFO ] 27-06-2025 17:38:49 [main] TestClass - ======
+[INFO ] 27-06-2025 17:38:49 [main] LogUtils - ===== SUITE STARTED: Railway Test =====
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [Utils] DynamicGraphHelper.createDynamicGraph() took 6 ms.
+[INFO ] 27-06-2025 17:38:49 [main] Utils - [TestTaskExecutor] Starting executor test 2147483647 with time out: 2147483647 milliseconds.
+[INFO ] 27-06-2025 17:38:49 [TestNG-test-Railway Test-2] Utils - [Invoker 1535026957] No configuration methods found
+[INFO ] 27-06-2025 17:38:49 [TestNG-test-Railway Test-1] Utils - [Invoker 1527086220] No configuration methods found
+[INFO ] 27-06-2025 17:38:49 [TestNG-test-Railway Test-1] Utils - [Invoker 1527086220] Invoking @BeforeMethod TestBase.beforeTest()[pri:0, instance:com.tests.logintest.TestCase01@3c989952]
+[INFO ] 27-06-2025 17:38:49 [TestNG-test-Railway Test-2] Utils - [Invoker 1535026957] Invoking @BeforeMethod TestBase.beforeTest()[pri:0, instance:com.tests.logintest.TestCase02@6035b93b]
+[INFO ] 27-06-2025 17:38:53 [TestNG-test-Railway Test-2] LogUtils - START TEST: UserCannotLoginWithBlankUsernameTextbox
+[INFO ] 27-06-2025 17:38:53 [TestNG-test-Railway Test-1] LogUtils - START TEST: UserCanLogIntoRailwayWithValidUsernameAndPassword
+[INFO ] 27-06-2025 17:38:53 [TestNG-test-Railway Test-2] Utils - [Invoker 1535026957] Invoking com.tests.logintest.TestCase02.UserCannotLoginWithBlankUsernameTextbox
+[INFO ] 27-06-2025 17:38:53 [TestNG-test-Railway Test-1] Utils - [Invoker 1527086220] Invoking com.tests.logintest.TestCase01.UserCanLogIntoRailwayWithValidUsernameAndPassword
+[INFO ] 27-06-2025 17:38:53 [TestNG-test-Railway Test-2] LogUtils - === START TEST: UserCannotLoginWithBlankUsernameTextbox ===
+[INFO ] 27-06-2025 17:38:53 [TestNG-test-Railway Test-1] LogUtils - === START TEST: UserCanLogIntoRailwayWithValidUsernameAndPassword ===
+[INFO ] 27-06-2025 17:38:53 [TestNG-test-Railway Test-1] LogUtils - Navigating to Login tab...
+[INFO ] 27-06-2025 17:38:53 [TestNG-test-Railway Test-2] LogUtils - Clicking on Login tab
+[INFO ] 27-06-2025 17:38:54 [TestNG-test-Railway Test-2] LogUtils - Attempt to login with blank username and valid password
+[INFO ] 27-06-2025 17:38:55 [TestNG-test-Railway Test-2] LogUtils - Verifying error message is shown for blank email
+[INFO ] 27-06-2025 17:38:55 [TestNG-test-Railway Test-2] LogUtils - === END TEST: UserCannotLoginWithBlankUsernameTextbox ===
+[INFO ] 27-06-2025 17:38:55 [TestNG-test-Railway Test-2] LogUtils - PASSED: UserCannotLoginWithBlankUsernameTextbox
+[INFO ] 27-06-2025 17:38:55 [TestNG-test-Railway Test-2] Utils - [Invoker 1535026957] Invoking @AfterMethod TestBase.after()[pri:0, instance:com.tests.logintest.TestCase02@6035b93b]
+[INFO ] 27-06-2025 17:38:56 [TestNG-test-Railway Test-2] Utils - [Invoker 1535026957] No configuration methods found
+[INFO ] 27-06-2025 17:38:56 [TestNG-test-Railway Test-1] LogUtils - Checking welcome message: Welcome dattdd129@gmail.com
+[INFO ] 27-06-2025 17:38:56 [TestNG-test-Railway Test-1] Utils - [Invoker 1527086220] Invoking @AfterMethod TestBase.after()[pri:0, instance:com.tests.logintest.TestCase01@3c989952]
+[INFO ] 27-06-2025 17:38:57 [TestNG-test-Railway Test-1] Utils - [Invoker 1527086220] No configuration methods found
+[INFO ] 27-06-2025 17:38:57 [main] LogUtils - ===== SUITE FINISHED: Railway Test =====
+[INFO ] 27-06-2025 17:38:57 [main] Utils - [TestNG] Time taken by org.testng.internal.ExitCodeListener@62435e70: 0 ms

@@ -25,6 +25,7 @@
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
+
         </repository>
     </repositories>
 
@@ -55,6 +56,47 @@
             <artifactId>selenium-logger</artifactId>
             <version>2.4.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.15.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.10.2</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.mailslurp/mailslurp-client-java -->
+        <dependency>
+            <groupId>com.mailslurp</groupId>
+            <artifactId>mailslurp-client-java</artifactId>
+            <version>16.2.1</version>
+        </dependency>
+
+        <!-- Core Log4j2 -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.20.0</version>
+        </dependency>
+
+        <!-- Log4j2 API -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.20.0</version>
+        </dependency>
+
+        <!-- Optional: SLF4J bridge (nếu bạn dùng SLF4J API) -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>2.20.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>
