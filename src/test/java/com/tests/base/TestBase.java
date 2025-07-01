@@ -1,6 +1,8 @@
 package com.tests.base;
 
 import com.railway.driver.DriverManager;
+import com.railway.extentreport.ExtentTestManager;
+import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 public class TestBase {
@@ -12,7 +14,10 @@ public class TestBase {
     }
 
     @AfterMethod
-    public void after() {
+    public void after(ITestResult result) {
+        // Ghi log và lưu report của test case
+
+        // Đóng trình duyệt
         DriverManager.quitDriver();
     }
 

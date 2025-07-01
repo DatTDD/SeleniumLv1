@@ -2,6 +2,7 @@ package com.railway.pages;
 
 import com.railway.constant.Constants;
 import com.railway.driver.DriverManager;
+import com.railway.utility.LogUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -52,6 +53,8 @@ public class MyTicketPage extends BasePage {
         selectStatus.selectByVisibleText(status);
         getWebElement(applyFilterButton).click();
     }
+
+
 
     public int getNumberOfTicketRows() {
         List<WebElement> rows = DriverManager.getDriver().findElements(tableRows);

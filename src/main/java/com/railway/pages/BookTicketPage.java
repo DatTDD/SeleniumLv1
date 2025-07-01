@@ -2,6 +2,7 @@ package com.railway.pages;
 
 import com.railway.common.Common;
 import com.railway.constant.Constants;
+import com.railway.dataobject.Ticket;
 import com.railway.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -22,21 +23,21 @@ public class BookTicketPage extends BasePage {
     private By seatTypeInforBookedTicket = By.xpath(String.format("//td[text()='%s']", Constants.BookTicket.SEAT_TYPE));
     private By ticketAmountInforBookedTicket = By.xpath(String.format("//td[text()='%s']", Constants.BookTicket.TICKET_AMOUNT));
 
-    public void bookTicket(String departdate, String departfrom, String arriveat, String seattype, String amout) {
+    public void bookTicket(Ticket ticket) {
         Select selectDepartDate = new Select(getWebElement(departDateDropdownMenu));
         Select selectDepartFrom = new Select(getWebElement(departFromDropdownMenu));
         Select selectSeatType = new Select(getWebElement(seatTypeDropdownMenu));
         Select selectTicketAmount = new Select(getWebElement(ticketAmountDropdownMenu));
 
-        selectDepartDate.selectByVisibleText(departdate);
-        selectDepartFrom.selectByVisibleText(departfrom);
+        selectDepartDate.selectByVisibleText(ticket.getDepartDate());
+        selectDepartFrom.selectByVisibleText(ticket.getDepartStation());
 
-        Common.waitDropdownValue(arriverAtDropdownMenu, arriveat, 3);
+        Common.waitDropdownValue(arriverAtDropdownMenu, ticket.getArriveStation(), 3);
         Select selectArriveAt = new Select(getWebElement(arriverAtDropdownMenu));
-        selectArriveAt.selectByVisibleText(arriveat);
+        selectArriveAt.selectByVisibleText(ticket.getArriveStation());
 
-        selectSeatType.selectByVisibleText(seattype);
-        selectTicketAmount.selectByVisibleText(amout);
+        selectSeatType.selectByVisibleText(ticket.getSeatType());
+        selectTicketAmount.selectByVisibleText(ticket.getTicketAmount());
         getWebElement(bookTicketButton).click();
     }
 
