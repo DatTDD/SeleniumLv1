@@ -1,19 +1,25 @@
 package com.tests.myticket;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.railway.constant.Constants;
 import com.railway.dataobject.Account;
+import com.railway.dataobject.Ticket;
 import com.railway.extentreport.ExtentTestManager;
 import com.railway.pages.LoginPage;
 import com.railway.pages.MyTicketPage;
 import com.railway.utility.LogUtils;
 import com.tests.base.TestBase;
+import com.tests.ultilities.JsonDataProvider;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class TestCase16 extends TestBase {
 
-    @Test
-    public void UserCanCancelATicket() {
+    @Test(dataProvider = "JsonData", dataProviderClass = JsonDataProvider.class)
+    public void UserCanCancelATicket(JsonNode data) {
         LogUtils.info("=== START TEST: UserCanCancelATicket ===");
 
         LoginPage loginPage = new LoginPage();
@@ -28,14 +34,25 @@ public class TestCase16 extends TestBase {
 
         MyTicketPage myTicketPage = new MyTicketPage();
         myTicketPage.clickOnTab(Constants.MenuBar.MY_TICKET);
-        myTicketPage.useFilterToSearchTicket(Constants.BookTicket.DEPART_FROM, Constants.BookTicket.ARRIVER_AT, Constants.BookTicket.DEPART_DATE, "New");
-        LogUtils.info("2. Filtering tickets with Depart From: " + Constants.BookTicket.DEPART_FROM + ", Arrive At: " + Constants.BookTicket.ARRIVER_AT + ", Depart Date: " + Constants.BookTicket.DEPART_DATE + ", Status: New");
-        ExtentTestManager.getTest().info("2. Filtering tickets with Depart From: " + Constants.BookTicket.DEPART_FROM + ", Arrive At: " + Constants.BookTicket.ARRIVER_AT + ", Depart Date: " + Constants.BookTicket.DEPART_DATE + ", Status: New");
+
+
+        String departStation = data.get("departStation").asText();
+        String arriveStation = data.get("arriveStation").asText();
+        int days = data.get("days").asInt();
+        String seatType = data.get("seatType").asText();
+        String ticketAmount = String.valueOf(data.get("amount").asInt());
+        String departDate = LocalDate.now().plusDays(days + 3).format(DateTimeFormatter.ofPattern("M/d/yyyy"));
+
+        Ticket ticket = new Ticket(departDate, departStation, arriveStation, seatType, ticketAmount);
+
+        myTicketPage.useFilterToSearchTicket(departStation, arriveStation, departDate, "New");
+        LogUtils.info("2. Filtering tickets with Depart From: " + departStation + ", Arrive At: " + arriveStation + ", Depart Date: " + departDate + ", Status: New");
+        ExtentTestManager.getTest().info("2. Filtering tickets with Depart From: " + departStation + ", Arrive At: " + arriveStation + ", Depart Date: " + departDate + ", Status: New");
 
         int numberOfTicketRowsBeforeDelete = myTicketPage.getNumberOfTicketRows();
-        myTicketPage.cancelTicket(Constants.BookTicket.DEPART_FROM, Constants.BookTicket.ARRIVER_AT, Constants.BookTicket.SEAT_TYPE, Constants.BookTicket.DEPART_DATE, Constants.BookTicket.TICKET_AMOUNT);
-        LogUtils.info("3. Cancelling ticket with Depart From: " + Constants.BookTicket.DEPART_FROM + ", Arrive At: " + Constants.BookTicket.ARRIVER_AT + ", Seat Type: " + Constants.BookTicket.SEAT_TYPE + ", Depart Date: " + Constants.BookTicket.DEPART_DATE + ", Ticket Amount: " + Constants.BookTicket.TICKET_AMOUNT);
-        ExtentTestManager.getTest().info("3. Cancelling ticket with Depart From: " + Constants.BookTicket.DEPART_FROM + ", Arrive At: " + Constants.BookTicket.ARRIVER_AT + ", Seat Type: " + Constants.BookTicket.SEAT_TYPE + ", Depart Date: " + Constants.BookTicket.DEPART_DATE + ", Ticket Amount: " + Constants.BookTicket.TICKET_AMOUNT);
+        myTicketPage.cancelTicket(ticket);
+        LogUtils.info("3. Cancelling ticket with Depart From: " + departStation + ", Arrive At: " + arriveStation + ", Seat Type: " + seatType + ", Depart Date: " + departDate + ", Ticket Amount: " + ticketAmount);
+        ExtentTestManager.getTest().info("3. Cancelling ticket with Depart From: " + departStation + ", Arrive At: " + arriveStation + ", Seat Type: " + seatType + ", Depart Date: " + departDate + ", Ticket Amount: " + ticketAmount);
 
 
         myTicketPage.acceptCancelAlert();

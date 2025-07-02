@@ -41,10 +41,13 @@ public class TestCase09 extends TestBase {
         LogUtils.info("4. Changing password: " + Constants.Account.VALID_PASSWORD + ", New Password: " + Constants.Account.VALID_PASSWORD + ", Confirm Password: " + Constants.Account.VALID_PASSWORD);
         ExtentTestManager.getTest().info("4. Changing password: " + Constants.Account.VALID_PASSWORD + ", New Password: " + Constants.Account.VALID_PASSWORD + ", Confirm Password: " + Constants.Account.VALID_PASSWORD);
 
-        Assert.assertEquals(changePasswordPage.getChangePasswordMessageSuccess(), Constants.ChangePassword.CHANGE_PASSWORD_MESSAGE_SUCCESS);
+        Assert.assertEquals(changePasswordPage.getChangePasswordMessageSuccess(), Constants.Message.CHANGE_PASSWORD_MESSAGE_SUCCESS);
         LogUtils.info("Verifying change password success message");
-        ExtentTestManager.getTest().info("Expected: " + Constants.ChangePassword.CHANGE_PASSWORD_MESSAGE_SUCCESS);
-        ExtentTestManager.getTest().info("Actual: " + changePasswordPage.getChangePasswordMessageSuccess());
+        common.logExpectedAndActual(
+                "Change Password Success Message:",
+                Constants.Message.CHANGE_PASSWORD_MESSAGE_SUCCESS,
+                changePasswordPage.getChangePasswordMessageSuccess()
+        );
 
         LogUtils.info("=== END TEST: UserCanChangePassword ===");
     }

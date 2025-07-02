@@ -1,5 +1,6 @@
 package com.tests.logintest;
 
+import com.railway.common.Common;
 import com.railway.constant.Constants;
 import com.railway.dataobject.Account;
 import com.railway.extentreport.ExtentTestManager;
@@ -38,17 +39,15 @@ public class TestCase06 extends TestBase {
         Assert.assertEquals(myTicketPage.getMyTicketTitle(), Constants.PageTitle.MY_TICKET_TITLE);
         LogUtils.info("Verifying My Ticket page is displayed");
         ExtentTestManager.getTest().info("Verifying My Ticket page is displayed");
-        ExtentTestManager.getTest().info("Expected: " + Constants.PageTitle.MY_TICKET_TITLE);
-        ExtentTestManager.getTest().info("Actual: " + myTicketPage.getMyTicketTitle());
+        Common common = new Common();
+        common.logExpectedAndActual("My Ticket Page Title:", Constants.PageTitle.MY_TICKET_TITLE, myTicketPage.getMyTicketTitle());
 
         ChangePasswordPage changePasswordPage = new ChangePasswordPage();
         changePasswordPage.clickOnTab(Constants.MenuBar.CHANGE_PASSWORD);
         Assert.assertEquals(changePasswordPage.changePasswordTitle(), Constants.PageTitle.CHANGE_PASSWORD_TITLE);
         LogUtils.info("Verifying Change Password page is displayed");
         ExtentTestManager.getTest().info("Verifying Change Password page is displayed");
-        ExtentTestManager.getTest().info("Expected: " + Constants.PageTitle.CHANGE_PASSWORD_TITLE);
-        ExtentTestManager.getTest().info("Actual: " + changePasswordPage.changePasswordTitle());
-
+        common.logExpectedAndActual("Change Password Page Title:", Constants.PageTitle.CHANGE_PASSWORD_TITLE, changePasswordPage.changePasswordTitle());
 
         LogUtils.info("=== END TEST: AdditionalPagesDisplayOnceUserLoggedIn ===");
 

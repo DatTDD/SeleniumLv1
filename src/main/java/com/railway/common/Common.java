@@ -55,14 +55,5 @@ public class Common {
         ExtentTestManager.getTest().info("Actual:   " + actual);
     }
 
-//    public String generateDepartDate(int offsetDays) {
-////        int offsetDays = Integer.parseInt(data.get("departDate").asText());
-////        LocalDate date = LocalDate.now().plusDays(offsetDays + 3);
-////        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/d/yyyy");
-////        String departDate = date.format(formatter);
-//        LocalDate date = LocalDate.now().plusDays(3);
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("M/d/yyyy");
-//        return date.format(formatter);
-//    }
 
 }

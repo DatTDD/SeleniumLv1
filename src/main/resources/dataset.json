@@ -1,94 +1,82 @@
 {
-  "TC01": {
+  "TestCase01": {
     "username": "dattdd129@gmail.com",
     "password": "12345678"
   },
-  "TC02": {
+  "TestCase02": {
     "username": "",
     "password": "12345678"
   },
-  "TC03": {
+  "TestCase04": {
     "username": "dattdd129@gmail.com",
     "password": "abc123"
   },
-  "TC05": {
+  "TestCase05": {
     "username": "dattdd129@gmail.com",
     "password": "abc123"
   },
-  "TC06": {
+  "TestCase06": {
     "username": "dattdd129@gmail.com",
     "password": "minh12345"
   },
-  "TC07": {
+  "TestCase07": {
     "username": "dcypnfhi@gmail.com",
     "password": "12345678",
     "confirmPassword": "12345678",
     "pid": "54553678998"
   },
-  "TC08": {
+  "TestCase08": {
     "username": "dcypnfhi@sharklasers.com",
     "password": "12345678"
   },
-  "TC09": {
+  "TestCase09": {
     "password": "dattdd129@gmail.com",
     "newPassword": "12345678",
     "confirmPassword": "12345678"
   },
-  "TC10": {
+  "TestCase10": {
     "username": "satt2502010@gmail.com",
     "password": "12345678",
     "confirmPassword": "12345678",
     "pid": "12345678"
   },
-  "TC11": {
+  "TestCase11": {
     "username": "dattdd129@gmail.com",
     "password": "",
     "confirmPassword": "",
     "pid": ""
   },
-  "TC12": {
+  "TestCase12": {
     "username": "lhdfhmhb@sharklasers.com",
     "newPassword": "12345678",
     "confirmPassword": "12345678"
   },
-  "TC13": {
+  "TestCase13": {
     "username": "lhdfhmhb@sharklasers.com",
     "newPassword": "12345678",
     "confirmPassword": "12345"
   },
-  "TC14": [
+  "TestCase14": [
     {
       "departStation": "Sài Gòn",
-      "arriveStation": "Phan Thiết",
+      "arriveStation": "Quảng Ngãi",
       "days": 2,
       "seatType": "Soft bed with air conditioner",
       "amount": 1
     }
   ],
-  "TC15": {
-    "departFrom": "Đà Nẵng",
-    "arriveAt": "Sài Gòn"
-  },
-  "TC16": [
+  "TestCase15": [
     {
-      "departStation": "Huế",
+      "departStation": "Sài Gòn",
+      "arriveStation": "Quảng Ngãi"
+    }
+  ],
+  "TestCase16": [
+    {
+      "departStation": "Sài Gòn",
       "arriveStation": "Quảng Ngãi",
-      "days": 7,
+      "days": 2,
       "seatType": "Soft bed with air conditioner",
-      "amount": 2
-    },
-    {
-      "departStation": "Quảng Ngãi",
-      "arriveStation": "Huế",
-      "days": 15,
-      "seatType": "Soft bed",
-      "amount": 1
-    },
-    {
-      "departStation": "Nha Trang",
-      "arriveStation": "Phan Thiết",
-      "days": 5,
-      "seatType": "Hard bed",
       "amount": 1
     }
   ]

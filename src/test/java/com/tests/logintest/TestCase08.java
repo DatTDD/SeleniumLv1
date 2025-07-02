@@ -1,5 +1,6 @@
 package com.tests.logintest;
 
+import com.railway.common.Common;
 import com.railway.constant.Constants;
 import com.railway.dataobject.Account;
 import com.railway.extentreport.ExtentTestManager;
@@ -29,11 +30,11 @@ public class TestCase08 extends TestBase {
         LogUtils.info("2. Login with account without acctive");
         ExtentTestManager.getTest().info("2. Login with account without acctive");
 
-        Assert.assertEquals(loginPage.loginErrorMessage(), Constants.Login.INVALID_ALL_ERROR_MESSAGE, "Dang nhap that bai");
+        Assert.assertEquals(loginPage.loginErrorMessage(), Constants.Message.LOGIN_WITH_INVALID_ALL_ERROR_MESSAGE, "Dang nhap that bai");
         LogUtils.info("Verifying error message is displayed");
         ExtentTestManager.getTest().info("Verifying error message is displayed");
-        ExtentTestManager.getTest().info("Expected: " + Constants.Login.INVALID_ALL_ERROR_MESSAGE);
-        ExtentTestManager.getTest().info("Actual: " + loginPage.loginErrorMessage());
+        Common common = new Common();
+        common.logExpectedAndActual("Error Message:", Constants.Message.LOGIN_WITH_INVALID_ALL_ERROR_MESSAGE, loginPage.loginErrorMessage());
 
         LogUtils.info("=== END TEST: AdditionalPagesDisplayOnceUserLoggedIn ===");
     }

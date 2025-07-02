@@ -1,5 +1,6 @@
 package com.tests.logintest;
 
+import com.railway.common.Common;
 import com.railway.constant.Constants;
 import com.railway.dataobject.Account;
 import com.railway.extentreport.ExtentTestManager;
@@ -26,12 +27,12 @@ public class TestCase03 extends TestBase {
         LogUtils.info("2. Attempting to login with valid username and INVALID password...");
         ExtentTestManager.getTest().info("2. Attempting login with invalid password");
 
-        Assert.assertEquals(loginPage.loginErrorMessage(), Constants.Login.BLANK_EMAIL_OR_PASSWORD_ERROR_MESSAGE);
+        Assert.assertEquals(loginPage.loginErrorMessage(), Constants.Message.LOGIN_WITH_BLANK_EMAIL_OR_PASSWORD_ERROR_MESSAGE);
 
         LogUtils.info("Verifying error message is displayed for invalid password...");
         ExtentTestManager.getTest().info("Verifying error message is displayed");
-        ExtentTestManager.getTest().info("Expected: " + Constants.Login.BLANK_EMAIL_OR_PASSWORD_ERROR_MESSAGE);
-        ExtentTestManager.getTest().info("Actual: " + loginPage.loginErrorMessage());
+        Common common = new Common();
+        common.logExpectedAndActual("Error Message:", Constants.Message.LOGIN_WITH_BLANK_EMAIL_OR_PASSWORD_ERROR_MESSAGE, loginPage.loginErrorMessage());
 
         LogUtils.info("=== END TEST: UserCannotLogIntoRailwayWithInvalidPassword ===");
     }

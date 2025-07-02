@@ -17,12 +17,13 @@ public class TestCase05 extends TestBase {
         LogUtils.info("=== START TEST: SystemShowsMessageWhenUserEntersWrongPasswordSeveralTimes ===");
 
         LoginPage loginPage = new LoginPage();
+        Common common = new Common();
         loginPage.clickOnTab(Constants.MenuBar.LOGIN);
         LogUtils.info("1. Clicking on Login tab");
         ExtentTestManager.getTest().info("1. Clicking on Login tab");
 
         for (int i = 1; i < 5; i++){
-            Common common = new Common();
+
             common.scrollToBottom();
             Account account = Account.INVALID_PASSWORD_ACCOUNT;
             loginPage.login(account);
@@ -30,11 +31,10 @@ public class TestCase05 extends TestBase {
         LogUtils.info("2. Login 4 times");
         ExtentTestManager.getTest().info("2. Login 4 times");
 
-        Assert.assertEquals(loginPage.loginErrorMessage(), Constants.Login.SEVERAL_TIMES_LOGIN_FAIL_MESSAGE);
+        Assert.assertEquals(loginPage.loginErrorMessage(), Constants.Message.SEVERAL_TIMES_LOGIN_FAIL_MESSAGE);
         LogUtils.info("Verifying error message is displayed");
         ExtentTestManager.getTest().info("Verifying error message is displayed");
-        ExtentTestManager.getTest().info("Expected: " + Constants.Login.SEVERAL_TIMES_LOGIN_FAIL_MESSAGE);
-        ExtentTestManager.getTest().info("Actual: " + loginPage.loginErrorMessage());
+        common.logExpectedAndActual("Error Message:", Constants.Message.SEVERAL_TIMES_LOGIN_FAIL_MESSAGE, loginPage.loginErrorMessage());
 
         LogUtils.info("=== END TEST: SystemShowsMessageWhenUserEntersWrongPasswordSeveralTimes ===");
     }

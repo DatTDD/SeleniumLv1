@@ -14,7 +14,8 @@ public class DriverManager {
             options.addArguments("--allow-running-insecure-content");
             options.addArguments("--disable-web-security");
 
-            WebDriver newDriver = new ChromeDriver(options);
+//            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+            WebDriver newDriver = new ChromeDriver();
             newDriver.manage().window().maximize();
             _driver.set(newDriver);
         }
