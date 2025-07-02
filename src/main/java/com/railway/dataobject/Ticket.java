@@ -1,21 +1,18 @@
 package com.railway.dataobject;
 
-public enum Ticket {
-    VALID_TICKET("7/16/2025","Nha Trang", "Đà Nẵng", "Soft bed with air conditioner", "1");
-
+public class Ticket {
     private String departDate;
     private String departStation;
     private String arriveStation;
     private String seatType;
     private String ticketAmount;
 
-    Ticket(String departDate, String departStation, String arriveStation, String seatType, String ticketAmount) {
+    public Ticket(String departDate, String departStation, String arriveStation, String seatType, String ticketAmount) {
         this.departDate = departDate;
         this.departStation = departStation;
         this.arriveStation = arriveStation;
         this.seatType = seatType;
         this.ticketAmount = ticketAmount;
-
     }
 
     public String getDepartDate() {

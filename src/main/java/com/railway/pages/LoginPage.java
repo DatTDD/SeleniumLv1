@@ -14,7 +14,7 @@ public class LoginPage extends BasePage {
     private final By forgotPasswordPage = By.xpath("//a[text()='Forgot Password page']");
 
     public void login(Account account) {
-        clickOnTab(Constants.MenuBar.LOGIN);
+        //clickOnTab(Constants.MenuBar.LOGIN);
         if (!getWebElement(usernameTextBox).getAttribute("value").isEmpty()) {
             getWebElement(usernameTextBox).clear();
         }

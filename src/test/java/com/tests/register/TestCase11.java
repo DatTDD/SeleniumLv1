@@ -26,15 +26,13 @@ public class TestCase11 extends TestBase {
         LogUtils.info("2. Registering new account with empty password and PID");
         ExtentTestManager.getTest().info("2. Registering new account with empty password and PID");
 
-        Assert.assertEquals(registerPage.getInvalidPasswordErrorMessage(), Constants.Register.INVALID_PASSWORD_ERROR_MESSAGE);
-        Assert.assertEquals(registerPage.getPidInvalidErrorMessage(), Constants.Register.INVALID_ID_ERROR_MESSAGE);
+        Assert.assertEquals(registerPage.getInvalidPasswordErrorMessage(), Constants.Message.REGISTER_INVALID_PASSWORD_ERROR_MESSAGE);
+        Assert.assertEquals(registerPage.getPidInvalidErrorMessage(), Constants.Message.REGISTER_INVALID_ID_ERROR_MESSAGE);
 
         LogUtils.info("Verifying error messages are displayed for empty password and PID");
         ExtentTestManager.getTest().info("Verifying error messages are displayed");
-        ExtentTestManager.getTest().info("Expected Password Error: " + Constants.Register.INVALID_PASSWORD_ERROR_MESSAGE);
-        ExtentTestManager.getTest().info("Actual Password Error: " + registerPage.getInvalidPasswordErrorMessage());
-        ExtentTestManager.getTest().info("Expected PID Error: " + Constants.Register.INVALID_ID_ERROR_MESSAGE);
-        ExtentTestManager.getTest().info("Actual PID Error: " + registerPage.getPidInvalidErrorMessage());
+        common.logExpectedAndActual("Password Error:", Constants.Message.REGISTER_INVALID_PASSWORD_ERROR_MESSAGE, registerPage.getInvalidPasswordErrorMessage());
+        common.logExpectedAndActual("PID Error:", Constants.Message.REGISTER_INVALID_ID_ERROR_MESSAGE, registerPage.getPidInvalidErrorMessage());
 
         LogUtils.info("=== END TEST: UserCannotCreateAccountWhilePasswordAndPIDFieldsAreEmpty ===");
 

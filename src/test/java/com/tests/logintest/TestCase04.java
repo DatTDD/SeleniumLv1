@@ -1,5 +1,6 @@
 package com.tests.logintest;
 
+import com.railway.common.Common;
 import com.railway.constant.Constants;
 import com.railway.extentreport.ExtentTestManager;
 import com.railway.pages.BookTicketPage;
@@ -25,8 +26,8 @@ public class TestCase04 extends TestBase {
         Assert.assertEquals(loginPage.loginTitle(), Constants.PageTitle.LOGIN_PAGE_TITLE);
         LogUtils.info("Verifying Login page is displayed");
         ExtentTestManager.getTest().info("Verifying Login page is displayed");
-        ExtentTestManager.getTest().info("Expected: " + Constants.PageTitle.LOGIN_PAGE_TITLE);
-        ExtentTestManager.getTest().info("Actual: " + loginPage.loginTitle());
+        Common common = new Common();
+        common.logExpectedAndActual("Login Page Title:", Constants.PageTitle.LOGIN_PAGE_TITLE, loginPage.loginTitle());
 
         LogUtils.info("=== END TEST: LoginPageDisplaysWhenUserClicksOnBookTicketTabWithoutLogin ===");
 

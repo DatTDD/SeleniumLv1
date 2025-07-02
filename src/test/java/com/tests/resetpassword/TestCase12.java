@@ -1,5 +1,6 @@
 package com.tests.resetpassword;
 
+import com.railway.common.Common;
 import com.railway.constant.Constants;
 import com.railway.extentreport.ExtentTestManager;
 import com.railway.pages.*;
@@ -47,14 +48,13 @@ public class TestCase12 extends TestBase {
 
 
         Assert.assertTrue(resetPasswordPage.isOnTopErrorMessageDisplayed(), "Error message does not exist");
-        Assert.assertEquals(resetPasswordPage.getErrorMessage(), Constants.ResetPasswordMessage.ERROR_MESSAGE_INCORRECT_RESET_TOKEN);
-        Assert.assertEquals(resetPasswordPage.getInlineErrorMessageInvalidResetTokenField(), Constants.ResetPasswordMessage.INLINE_ERROR_MESSAGE_INVALID_RESET_TOKEN);
+        Assert.assertEquals(resetPasswordPage.getErrorMessage(), Constants.Message.ERROR_MESSAGE_INCORRECT_RESET_TOKEN);
+        Assert.assertEquals(resetPasswordPage.getInlineErrorMessageInvalidResetTokenField(), Constants.Message.INLINE_ERROR_MESSAGE_INVALID_RESET_TOKEN);
         LogUtils.info("Verify error messages are displayed");
         ExtentTestManager.getTest().info("Verify error messages are displayed");
-        ExtentTestManager.getTest().info("Expected Top Error Message: " + Constants.ResetPasswordMessage.ERROR_MESSAGE_INCORRECT_RESET_TOKEN);
-        ExtentTestManager.getTest().info("Actual Top Error Message: " + resetPasswordPage.getErrorMessage());
-        ExtentTestManager.getTest().info("Expected Inline Reset Token Error Message: " + Constants.ResetPasswordMessage.INLINE_ERROR_MESSAGE_INVALID_RESET_TOKEN);
-        ExtentTestManager.getTest().info("Actual Inline Reset Token Error Message: " + resetPasswordPage.getInlineErrorMessageInvalidResetTokenField());
+        Common common = new Common();
+        common.logExpectedAndActual("Top Error Message:", Constants.Message.ERROR_MESSAGE_INCORRECT_RESET_TOKEN, resetPasswordPage.getErrorMessage());
+        common.logExpectedAndActual("Inline Reset Token Error Message:", Constants.Message.INLINE_ERROR_MESSAGE_INVALID_RESET_TOKEN, resetPasswordPage.getInlineErrorMessageInvalidResetTokenField());
 
         LogUtils.info("=== END TEST: errorsDisplayWhenPasswordResetTokenIsBlank ===");
 

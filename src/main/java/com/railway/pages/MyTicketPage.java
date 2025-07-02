@@ -1,6 +1,7 @@
 package com.railway.pages;
 
 import com.railway.constant.Constants;
+import com.railway.dataobject.Ticket;
 import com.railway.driver.DriverManager;
 import com.railway.utility.LogUtils;
 import org.openqa.selenium.By;
@@ -27,8 +28,8 @@ public class MyTicketPage extends BasePage {
         return getWebElement(myticketTitle).getText();
     }
 
-    public void cancelTicket(String departStation, String arriveStation, String seatType, String departDate, String amount) {
-        getWebElement(By.xpath(String.format(cancelTicketButtonStr, Constants.BookTicket.DEPART_FROM, Constants.BookTicket.ARRIVER_AT, Constants.BookTicket.SEAT_TYPE, Constants.BookTicket.DEPART_DATE, Constants.BookTicket.TICKET_AMOUNT))).click();
+    public void cancelTicket(Ticket ticket) {
+        getWebElement(By.xpath(String.format(cancelTicketButtonStr,ticket.getDepartStation(), ticket.getArriveStation(), ticket.getSeatType(), ticket.getDepartDate(), ticket.getTicketAmount() ))).click();
     }
 
     public void acceptCancelAlert() {
@@ -53,8 +54,6 @@ public class MyTicketPage extends BasePage {
         selectStatus.selectByVisibleText(status);
         getWebElement(applyFilterButton).click();
     }
-
-
 
     public int getNumberOfTicketRows() {
         List<WebElement> rows = DriverManager.getDriver().findElements(tableRows);

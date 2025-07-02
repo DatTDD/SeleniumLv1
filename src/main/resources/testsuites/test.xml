@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Railway Test Suite" parallel = "methods" verbose ="5" thread-count ="4">
+<suite name="Railway Test Suite" parallel = "methods" verbose ="5" thread-count ="1">
     <listeners>
-        <listener class-name="com.railway.listeners.TestListener" />
+        <listener class-name="com.tests.ultilities.TestListener" />
     </listeners>
 
     <test name="Railway Test">
@@ -17,11 +17,11 @@
 <!--            <class name="com.tests.changepassword.TestCase09"/>-->
 <!--            <class name="com.tests.register.TestCase10"/>-->
 <!--            <class name="com.tests.register.TestCase11"/>-->
-<!--            <class name="com.tests.resetpassword.TestCase12"></class>-->
-<!--            <class name="com.tests.resetpassword.TestCase13"></class>-->
-            <class name="com.tests.bookticket.TestCase14"></class>
+<!--            <class name="com.tests.resetpassword.TestCase12"/>-->
+<!--            <class name="com.tests.resetpassword.TestCase13"/>-->
+            <class name="com.tests.bookticket.TestCase14"/>
 <!--            <class name="com.tests.bookticket.TestCase15"/>-->
-<!--            <class name="com.tests.myticket.TestCase16"></class>-->
+            <class name="com.tests.myticket.TestCase16"></class>
         </classes>
 <!--        <packages>-->
 <!--            <package name="com.tests.changepassword"/>-->

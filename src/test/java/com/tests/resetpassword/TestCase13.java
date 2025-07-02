@@ -1,5 +1,6 @@
 package com.tests.resetpassword;
 
+import com.railway.common.Common;
 import com.railway.constant.Constants;
 import com.railway.extentreport.ExtentTestManager;
 import com.railway.pages.LoginPage;
@@ -48,14 +49,13 @@ public class TestCase13 extends TestBase {
         LogUtils.info("6. Reset password with password and confirm password don't match");
         ExtentTestManager.getTest().info("6. Reset password with password and confirm password don't match");
 
-        Assert.assertEquals(resetPasswordPage.getErrorMessage(), Constants.ResetPasswordMessage.ERROR_MESSAGE_COULD_NOT_RESET_PASSWORD);
-        Assert.assertEquals(resetPasswordPage.getInlineErrorMessageConfirmPasswordField(), Constants.ResetPasswordMessage.INLINE_ERROR_MESSAGE_CONFIRM_PASSWORD);
+        Assert.assertEquals(resetPasswordPage.getErrorMessage(), Constants.Message.ERROR_MESSAGE_COULD_NOT_RESET_PASSWORD);
+        Assert.assertEquals(resetPasswordPage.getInlineErrorMessageConfirmPasswordField(), Constants.Message.INLINE_ERROR_MESSAGE_CONFIRM_PASSWORD);
         LogUtils.info("Verify error messages are displayed");
         ExtentTestManager.getTest().info("Verify error messages are displayed");
-        ExtentTestManager.getTest().info("Expected OnTop Error Message: " + Constants.ResetPasswordMessage.ERROR_MESSAGE_COULD_NOT_RESET_PASSWORD);
-        ExtentTestManager.getTest().info("Actual OnTop Error Message: " + resetPasswordPage.getErrorMessage());
-        ExtentTestManager.getTest().info("Expected Inline Confirm Password Error Message: " + Constants.ResetPasswordMessage.INLINE_ERROR_MESSAGE_CONFIRM_PASSWORD);
-        ExtentTestManager.getTest().info("Actual Inline Confirm Password Error Message: " + resetPasswordPage.getInlineErrorMessageConfirmPasswordField());
+        Common common = new Common();
+        common.logExpectedAndActual("OnTop Error Message:", Constants.Message.ERROR_MESSAGE_COULD_NOT_RESET_PASSWORD, resetPasswordPage.getErrorMessage());
+        common.logExpectedAndActual("Inline Confirm Password Error Message:", Constants.Message.INLINE_ERROR_MESSAGE_CONFIRM_PASSWORD, resetPasswordPage.getInlineErrorMessageConfirmPasswordField());
 
         LogUtils.info("=== END TEST: errorsDisplayIfPasswordAndConfirmPasswordDontMatchWhenResettingPassword ===");
 
