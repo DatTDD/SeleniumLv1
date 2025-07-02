@@ -2,6 +2,8 @@ package com.railway.pages;
 
 import com.railway.constant.Constants;
 import org.openqa.selenium.By;
+import com.railway.dataobject.Account;
+
 
 public class LoginPage extends BasePage {
     private final By usernameTextBox = By.id("username");
@@ -11,13 +13,13 @@ public class LoginPage extends BasePage {
     private final By loginTitle = By.xpath("//h1[text()='Login page']");
     private final By forgotPasswordPage = By.xpath("//a[text()='Forgot Password page']");
 
-    public void login(String username, String password) {
+    public void login(Account account) {
         clickOnTab(Constants.MenuBar.LOGIN);
         if (!getWebElement(usernameTextBox).getAttribute("value").isEmpty()) {
             getWebElement(usernameTextBox).clear();
         }
-        getWebElement(usernameTextBox).sendKeys(username);
-        getWebElement(passwordTextBox).sendKeys(password);
+        getWebElement(usernameTextBox).sendKeys(account.getUsername());
+        getWebElement(passwordTextBox).sendKeys(account.getPassword());
         getWebElement(loginButton).click();
     }
 
